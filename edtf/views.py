@@ -12,7 +12,7 @@ except ImportError:
     # http://pypi.python.org/pypi/simplejson/1.7.3
     import simplejson as json
 from django.conf import settings
-from ExtendedDateTimeFormat import valid_edtf
+from edtf_validate import valid_edtf
 from edtf.decorators import jsonp
 
 def edtf_form(request):
