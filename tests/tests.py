@@ -1,25 +1,11 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
+import json
 
-Replace this with more appropriate tests for your application.
-"""
-try:
-    # the json module was included in the stdlib in python 2.6
-    # http://docs.python.org/library/json.html
-    import json
-except ImportError:
-    # simplejson 2.0.9 is available for python 2.4+
-    # http://pypi.python.org/pypi/simplejson/2.0.9
-    # simplejson 1.7.3 is available for python 2.3+
-    # http://pypi.python.org/pypi/simplejson/1.7.3
-    import simplejson as json
-from django.utils import unittest
 from ExtendedDateTimeFormat import valid_edtf
-from edtf.views import edtf_form, boolean_result, urlerror, result_json
-from django.test import Client
+from django.test import Client, TestCase
 
-class ViewsTest(unittest.TestCase):
+from edtf.views import edtf_form, boolean_result, urlerror, result_json
+
+class ViewsTest(TestCase):
     """
     This test class makes sure views get called and return proper response codes
 
@@ -58,7 +44,7 @@ class ViewsTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
 
-class DatesTest(unittest.TestCase):
+class DatesTest(TestCase):
     """This class does testing on the validation of dates"""
 
     def test_basic_dates(self):
