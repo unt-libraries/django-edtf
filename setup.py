@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-edtf',
-    version='0.1.0',
+    version='1.0.0',
     description='A Django app for the validation of dates in the Extended Date Time Format.',
     long_description=('Please visit https://github.com/unt-libraries/django-edtf'
                       ' for the latest documentation.'),
