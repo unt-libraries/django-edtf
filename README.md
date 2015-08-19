@@ -27,7 +27,7 @@ Installation
 1. Download and install from source code.
 
 ```console
-$ pip install https://github.com/unt-libraries/django-edtf
+$ pip install git+git://github.com/unt-libraries/django-edtf.git
 ```
 
 2. Add app to INSTALLED_APPS.
