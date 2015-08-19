@@ -4,7 +4,7 @@ from unittest import expectedFailure
 from django.core.urlresolvers import reverse, resolve
 from django.test import SimpleTestCase, RequestFactory
 
-from edtf.views import edtf_form, boolean_result, urlerror, result_json
+from edtf.views import edtf_form, boolean_result, result_json
 
 
 class TestURLs(SimpleTestCase):
