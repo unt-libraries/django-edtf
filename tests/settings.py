@@ -6,8 +6,6 @@ SECRET_KEY = 'nhaq5hwvn8+*8_+ss6+-u=jl2w7qt3m_3m-tcv$%o!%@wykech'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -60,5 +58,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MAINTENANCE_MSG = ''
-
-STATIC_URL = '/static/'
