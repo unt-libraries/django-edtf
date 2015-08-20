@@ -24,7 +24,7 @@ Requirements
 Installation
 ------------
 
-1. Download and install from source code.
+1. Download and install django-edtf.
 
 ```console
 $ pip install git+git://github.com/unt-libraries/django-edtf.git

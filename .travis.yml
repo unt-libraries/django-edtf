@@ -2,8 +2,8 @@ language: python
 sudo: false
 python: 2.7
 env:
-        - TOX_ENV=py27-django18
+    - TOX_ENV=py27
 install:
-        - pip install tox
+    - pip install tox
 script:
-        - tox -e $TOX_ENV
+    - tox -e $TOX_ENV
