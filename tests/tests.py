@@ -4,7 +4,7 @@ from unittest import expectedFailure
 from django.core.urlresolvers import reverse, resolve
 from django.test import SimpleTestCase, RequestFactory
 
-from edtf.views import edtf_form, boolean_result, result_json
+from edtf.views import edtf_form, result_json
 
 
 class TestURLs(SimpleTestCase):
@@ -34,51 +34,34 @@ class TestEdtfFormView(SimpleTestCase):
         self.assertTemplateUsed(response, 'edtf/edtf_form.html')
 
 
-class TestBooleanResultView(SimpleTestCase):
-
-    def setUp(self):
-        self.factory = RequestFactory()
-
-    def test_returns_200(self):
-        request = self.factory.get('/', {'date': '', 'level': ''})
-        response = boolean_result(request)
-        self.assertEqual(response.status_code, 200)
-
-    def test_returns_400_without_date(self):
-        request = self.factory.get('/', {'level': '1'})
-        response = boolean_result(request)
-        self.assertEqual(response.status_code, 400)
-
-    # The view should return an HTTP 400 response when no level is present.
-    @expectedFailure
-    def test_returns_400_without_level(self):
-        request = self.factory.get('/', {'date': 'March 3rd, 2016'})
-        response = boolean_result(request)
-        self.assertEqual(response.status_code, 400)
-
-    def test_returns_true_with_valid_date(self):
-        request = self.factory.get('/', {'date': '2012-06-12', 'level': '0'})
-        response = boolean_result(request)
-        self.assertHTMLEqual(response.content, 'true')
-
-    def test_returns_false_with_invalid_date(self):
-        request = self.factory.get('/', {'date': 'March 3rd, 2016', 'level': '2'})
-        response = boolean_result(request)
-        self.assertHTMLEqual(response.content, 'false')
-
-
 class TestResultJsonView(SimpleTestCase):
 
     def setUp(self):
         self.factory = RequestFactory()
 
     def test_returns_200(self):
-        response = self.client.get(reverse('edtf:results_json'), {'date': ''})
+        response = self.client.get(reverse('edtf:results_json'), {'date': '2012'})
         self.assertEqual(response.status_code, 200)
 
-    def test_returns_true_with_valid_date(self):
+    def test_returns_true_with_valid_date_no_level(self):
         response = self.client.get(reverse('edtf:results_json'), {'date': '2013?-12-12'})
         self.assertEqual(json.loads(response.content), {'validEDTF': True})
+
+    def test_returns_true_with_valid_date_and_level(self):
+        response = self.client.get(reverse('edtf:results_json'), {'date': '2013-12-12',
+                                                                  'level': '0'})
+        self.assertEqual(json.loads(response.content), {'validEDTF': True})
+
+    def test_returns_400_with_valid_date_and_invalid_level(self):
+        response = self.client.get(reverse('edtf:results_json'), {'date': '2013', 'level': '3'})
+        self.assertEqual(response.status_code, 400)
+
+    # The view has an error that makes a string comparison using 'is' rather than '=='. It is
+    # because of this that the view doesn't return a 400 when the level is empty, like it should.
+    @expectedFailure
+    def test_returns_400_with_valid_date_and_empty_level(self):
+        response = self.client.get(reverse('edtf:results_json'), {'date': '2013', 'level': ''})
+        self.assertEqual(response.status_code, 400)
 
     def test_returns_false_with_invalid_date(self):
         response = self.client.get(reverse('edtf:results_json'), {'date': '2013-23-????'})
@@ -89,9 +72,9 @@ class TestResultJsonView(SimpleTestCase):
         response = result_json(request)
         self.assertEqual(response.status_code, 400)
 
-    # The view should return an HTTP 400 response when no level is present.
+    # The view should return an HTTP 400 when the date is empty
     @expectedFailure
-    def test_returns_400_without_level(self):
-        request = self.factory.get('/', {'date': 'March 3rd, 2016', 'level': ''})
+    def test_returns_400_with_empty_date(self):
+        request = self.factory.get('/', {'date': ''})
         response = result_json(request)
         self.assertEqual(response.status_code, 400)
