@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 try:
@@ -14,6 +14,7 @@ except ImportError:
 from django.conf import settings
 from edtf_validate import valid_edtf
 from edtf.decorators import jsonp
+
 
 def edtf_form(request):
     """Renders the edtf form landing page to the user"""

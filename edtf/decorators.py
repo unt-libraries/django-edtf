@@ -20,8 +20,8 @@ def jsonp(f):
         if resp.status_code != 200:
             return resp
         if 'callback' in request.GET:
-            callback= request.GET['callback']
-            resp['Content-Type']='application/javascript; charset=utf-8'
+            callback = request.GET['callback']
+            resp['Content-Type'] = 'application/javascript; charset=utf-8'
             resp.content = "%s(%s)" % (callback, resp.content)
             return resp
         else:
