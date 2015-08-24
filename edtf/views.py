@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 try:
@@ -12,8 +12,9 @@ except ImportError:
     # http://pypi.python.org/pypi/simplejson/1.7.3
     import simplejson as json
 from django.conf import settings
-from ExtendedDateTimeFormat import valid_edtf
+from edtf_validate import valid_edtf
 from edtf.decorators import jsonp
+
 
 def edtf_form(request):
     """Renders the edtf form landing page to the user"""
@@ -26,22 +27,6 @@ def edtf_form(request):
         context_instance=RequestContext(request)
     )
 
-
-def boolean_result(request):
-    """Returns boolean result of valid_edtf as a HTTP response"""
-
-    # grab the date from the request argument
-    date = request.GET.get('date')
-    if 'level' in request.GET:
-        level = request.GET.get('level')
-        if level is '' or level is None:
-            return HttpResponseBadRequest()
-    if date is '' or date is None:
-        return HttpResponseBadRequest()
-    else:
-        # store the result and push it back as an HttpResponse
-        result = valid_edtf.is_valid(date)
-        return HttpResponse(str(result).lower())
 
 @jsonp
 def result_json(request):
@@ -83,9 +68,3 @@ def result_json(request):
         ensure_ascii=False,
     )
     return response
-
-
-def urlerror(request):
-    """Returns 404 for malformed URLs"""
-
-    return HttpResponseNotFound()

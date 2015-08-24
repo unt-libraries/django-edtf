@@ -1,0 +1,2 @@
+django==1.8
+edtf-validate==1.0.0
