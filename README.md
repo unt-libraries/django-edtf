@@ -1,5 +1,6 @@
 Django-edtf
 ===========
+[![Build Status](https://travis-ci.org/unt-libraries/django-edtf.svg?branch=master)](https://travis-ci.org/unt-libraries/django-edtf)
 
 
 About
