@@ -27,31 +27,31 @@ Installation
 
 1. Download and install django-edtf.
 
-```console
-$ pip install git+git://github.com/unt-libraries/django-edtf.git
-```
+    ```console
+    $ pip install git+git://github.com/unt-libraries/django-edtf.git
+    ```
 
 2. Add app to INSTALLED_APPS.
 
-```python
-INSTALLED_APPS = (
-    'edtf',
-)
-```
+    ```python
+    INSTALLED_APPS = (
+        'edtf',
+    )
+    ```
 
 3. Include the URLs.
 
-```python
-urlpatterns = [
-    url(r'^edtf/', include('edtf.urls', namespace='edtf')),
-]
-```
+    ```python
+    urlpatterns = [
+        url(r'^edtf/', include('edtf.urls', namespace='edtf')),
+    ]
+    ```
 
 4. Add the MAINTENANCE_MSG var in the settings.
 
-```python
-MAINTENANCE_MSG = ''
-```
+    ```python
+    MAINTENANCE_MSG = ''
+    ```
 
 License
 -------
