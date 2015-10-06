@@ -65,4 +65,5 @@ Contributors
 * [Joey Liechty](https://github.com/yeahdef)
 * [Mark Phillips](https://github.com/vphill)
 * [Lauren Ko](https://github.com/ldko)
+* [Damon Kelley](https://github.com/damonkelley)
 * [Gio Gottardi](https://github.com/somexpert)
