@@ -57,3 +57,12 @@ License
 -------
 
 See LICENSE
+
+
+Contributors
+------------
+
+* [Joey Liechty](https://github.com/yeahdef)
+* [Mark Phillips](https://github.com/vphill)
+* [Lauren Ko](https://github.com/ldko)
+* [Gio Gottardi](https://github.com/somexpert)
