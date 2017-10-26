@@ -2,14 +2,9 @@ language: python
 sudo: false
 python:
     - 2.7
-    - 3.6
 env:
     - DJANGO=1.8
-    - DJANGO=1.11
-matrix:
-    allow_failures:
-        - env: DJANGO=1.11
-        - python: 3.6
+    - DJANGO=1.9
 install:
     - pip install tox-travis
 script:
