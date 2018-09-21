@@ -1,15 +1,6 @@
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
-try:
-    # the json module was included in the stdlib in python 2.6
-    # http://docs.python.org/library/json.html
-    import json
-except ImportError:
-    # simplejson 2.0.9 is available for python 2.4+
-    # http://pypi.python.org/pypi/simplejson/2.0.9
-    # simplejson 1.7.3 is available for python 2.3+
-    # http://pypi.python.org/pypi/simplejson/1.7.3
-    import simplejson as json
+import json
 from django.conf import settings
 from edtf_validate import valid_edtf
 from edtf.decorators import jsonp
