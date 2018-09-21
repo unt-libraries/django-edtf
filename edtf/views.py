@@ -1,6 +1,5 @@
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 try:
     # the json module was included in the stdlib in python 2.6
     # http://docs.python.org/library/json.html
@@ -19,12 +18,12 @@ from edtf.decorators import jsonp
 def edtf_form(request):
     """Renders the edtf form landing page to the user"""
 
-    return render_to_response(
+    return render(
+        request,
         'edtf/edtf_form.html',
         {
             'maintenance_message': settings.MAINTENANCE_MSG,
         },
-        context_instance=RequestContext(request)
     )
 
 

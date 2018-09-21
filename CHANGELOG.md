@@ -2,11 +2,11 @@ Change Log
 ==========
 
 
-x.x.x
+2.0.0
 -----
 
-* Expanded tests to cover more Python and Django versions.
-* Expanded stated Django compatibility.
+* Added support for Django 1.10 and 1.11
+* Removed support for Django 1.8
 * Added CHANGELOG.md to keep track of changes.
 
 
