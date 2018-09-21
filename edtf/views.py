@@ -1,16 +1,6 @@
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.template import RequestContext
-from django.shortcuts import render_to_response
-try:
-    # the json module was included in the stdlib in python 2.6
-    # http://docs.python.org/library/json.html
-    import json
-except ImportError:
-    # simplejson 2.0.9 is available for python 2.4+
-    # http://pypi.python.org/pypi/simplejson/2.0.9
-    # simplejson 1.7.3 is available for python 2.3+
-    # http://pypi.python.org/pypi/simplejson/1.7.3
-    import simplejson as json
+from django.shortcuts import render
+import json
 from django.conf import settings
 from edtf_validate import valid_edtf
 from edtf.decorators import jsonp
@@ -19,12 +9,12 @@ from edtf.decorators import jsonp
 def edtf_form(request):
     """Renders the edtf form landing page to the user"""
 
-    return render_to_response(
+    return render(
+        request,
         'edtf/edtf_form.html',
         {
             'maintenance_message': settings.MAINTENANCE_MSG,
         },
-        context_instance=RequestContext(request)
     )
 
 
