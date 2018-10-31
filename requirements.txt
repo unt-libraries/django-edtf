@@ -1,2 +1,2 @@
-django==1.11
+django~=1.11.15
 edtf-validate>=1.0.0
