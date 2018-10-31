@@ -2,6 +2,12 @@ Change Log
 ==========
 
 
+x.x.x
+-----
+
+* Update requirements.txt to get latest version of edtf-validate
+
+
 2.0.0
 -----
 

@@ -1,2 +1,2 @@
 django==1.11
-edtf-validate==1.0.0
+edtf-validate>=1.0.0
