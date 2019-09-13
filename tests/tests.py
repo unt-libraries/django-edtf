@@ -1,5 +1,4 @@
 import json
-from unittest import expectedFailure
 
 from django.core.urlresolvers import reverse, resolve
 from django.test import SimpleTestCase, RequestFactory
@@ -56,9 +55,6 @@ class TestResultJsonView(SimpleTestCase):
         response = self.client.get(reverse('edtf:results_json'), {'date': '2013', 'level': '3'})
         self.assertEqual(response.status_code, 400)
 
-    # The view has an error that makes a string comparison using 'is' rather than '=='. It is
-    # because of this that the view doesn't return a 400 when the level is empty, like it should.
-    @expectedFailure
     def test_returns_400_with_valid_date_and_empty_level(self):
         response = self.client.get(reverse('edtf:results_json'), {'date': '2013', 'level': ''})
         self.assertEqual(response.status_code, 400)
@@ -72,8 +68,6 @@ class TestResultJsonView(SimpleTestCase):
         response = result_json(request)
         self.assertEqual(response.status_code, 400)
 
-    # The view should return an HTTP 400 when the date is empty
-    @expectedFailure
     def test_returns_400_with_empty_date(self):
         request = self.factory.get('/', {'date': ''})
         response = result_json(request)
