@@ -18,8 +18,8 @@ Requirements
 ------------
 
 * Django 1.9 - 1.11
-* Python == 2.7
-* [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.0.0
+* Python == 3.7
+* [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.1.0
 
 
 Installation

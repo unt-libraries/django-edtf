@@ -6,7 +6,7 @@ x.x.x
 -----
 
 * Update requirements.txt to get latest version of edtf-validate
-
+* Updated project to python 3.7 
 
 2.0.0
 -----
