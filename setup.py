@@ -6,7 +6,8 @@ setup(
     description='A Django app for the validation of dates in the Extended Date Time Format.',
     long_description=('Please visit https://github.com/unt-libraries/django-edtf'
                       ' for the latest documentation.'),
-    install_requires=['edtf-validate @ git+https://github.com/unt-libraries/edtf-validate.git@master'],
+    install_requires=[
+        'edtf-validate @ git+https://github.com/unt-libraries/edtf-validate.git@master'],
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
     url='https://github.com/unt-libraries/django-edtf',
