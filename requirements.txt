@@ -1,2 +1,2 @@
 django~=1.11.18
-git+https://github.com/unt-libraries/edtf-validate.git@py3#egg=edtf-validate
+git+https://github.com/unt-libraries/edtf-validate.git@master#egg=edtf-validate

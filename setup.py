@@ -7,7 +7,7 @@ setup(
     long_description=('Please visit https://github.com/unt-libraries/django-edtf'
                       ' for the latest documentation.'),
     install_requires=[
-        'edtf-validate @ git+https://github.com/unt-libraries/edtf-validate.git@py3'],
+        'edtf-validate @ git+https://github.com/unt-libraries/edtf-validate.git@master'],
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
     url='https://github.com/unt-libraries/django-edtf',
