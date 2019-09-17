@@ -7,7 +7,7 @@ setup(
     long_description=('Please visit https://github.com/unt-libraries/django-edtf'
                       ' for the latest documentation.'),
     install_requires=[
-        'edtf-validate @ git+https://github.com/unt-libraries/edtf-validate.git@master'],
+        'edtf-validate >= 1.1.0'],
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
     url='https://github.com/unt-libraries/django-edtf',
@@ -17,11 +17,10 @@ setup(
     classifiers=[
         'Natural Language :: English',
         'Environment :: Web Environment',
-        'Framework :: Django :: 1.9',
-        'Framework :: Django :: 1.10',
         'Framework :: Django :: 1.11',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 2.7'
+        'Programming Language :: Python :: 3.6'
         'Programming Language :: Python :: 3.7'
     ]
 )
