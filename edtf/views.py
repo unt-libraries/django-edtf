@@ -40,6 +40,20 @@ def result_json(request):
         jsonedtfdict = {
             'validEDTF': valid_edtf.is_valid(date) and funcs[level]
         }
+    elif 'levelConforms' in request.GET:
+        levelConforms = request.GET.get('levelConforms')
+        if levelConforms == '' or levelConforms is None or int(levelConforms) > 2 or \
+                int(levelConforms) < 0:
+            return HttpResponseBadRequest()
+        funcs = {
+            '0': valid_edtf.isLevel0(date),
+            '1': valid_edtf.isLevel0(date) or valid_edtf.isLevel1(date),
+            '2': valid_edtf.isLevel0(date) or valid_edtf.isLevel1(date)
+            or valid_edtf.isLevel2(date),
+        }
+        jsonedtfdict = {
+            'validEDTF': valid_edtf.is_valid(date) and funcs[levelConforms]
+        }
     else:
         # build dictionary to serialize to json
         jsonedtfdict = {

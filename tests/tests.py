@@ -63,6 +63,21 @@ class TestResultJsonView(SimpleTestCase):
         response = self.client.get(reverse('edtf:results_json'), {'date': '2013-23-????'})
         self.assertEqual(json.loads(response.content), {'validEDTF': False})
 
+    def test_returns_true_with_valid_date_and_levelConforms_1(self):
+        response = self.client.get(reverse('edtf:results_json'), {'date': '2013/2014',
+                                                                  'levelConforms': '1'})
+        self.assertEqual(json.loads(response.content), {'validEDTF': True})
+
+    def test_returns_true_with_valid_date_and_levelConforms_2(self):
+        response = self.client.get(reverse('edtf:results_json'), {'date': '2013-12-12',
+                                                                  'levelConforms': '2'})
+        self.assertEqual(json.loads(response.content), {'validEDTF': True})
+
+    def test_returns_400_with_valid_date_and_invalid_levelConforms(self):
+        response = self.client.get(reverse('edtf:results_json'), {'date': '2013',
+                                                                  'levelConforms': '3'})
+        self.assertEqual(response.status_code, 400)
+
     def test_returns_400_without_date(self):
         request = self.factory.get('/', {'level': '1'})
         response = result_json(request)
