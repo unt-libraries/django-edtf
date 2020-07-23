@@ -27,8 +27,8 @@ def result_json(request):
     jsonedtfdict = {}
     if date == '' or date is None:
         return HttpResponseBadRequest()
-    elif 'level' in request.GET:
-        level = request.GET.get('level')
+    elif 'levelFeature' in request.GET:
+        level = request.GET.get('levelFeature')
         if level == '' or level is None or int(level) > 2 or int(level) < 0:
             return HttpResponseBadRequest()
         # build dictionary to serialize to json
