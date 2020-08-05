@@ -46,10 +46,9 @@ def result_json(request):
                 int(levelConforms) < 0:
             return HttpResponseBadRequest()
         funcs = {
-            '0': valid_edtf.isLevel0(date),
-            '1': valid_edtf.isLevel0(date) or valid_edtf.isLevel1(date),
-            '2': valid_edtf.isLevel0(date) or valid_edtf.isLevel1(date)
-            or valid_edtf.isLevel2(date),
+            '0': valid_edtf.conformsLevel0(date),
+            '1': valid_edtf.conformsLevel1(date),
+            '2': valid_edtf.conformsLevel2(date),
         }
         jsonedtfdict = {
             'validEDTF': valid_edtf.is_valid(date) and funcs[levelConforms]
