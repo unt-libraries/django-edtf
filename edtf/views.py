@@ -5,6 +5,8 @@ from django.conf import settings
 from edtf_validate import valid_edtf
 from edtf.decorators import jsonp
 
+LEVELS = ('0', '1', '2')
+
 
 def edtf_form(request):
     """Renders the edtf form landing page to the user"""
@@ -29,7 +31,7 @@ def result_json(request):
         return HttpResponseBadRequest()
     elif 'levelFeature' in request.GET:
         level = request.GET.get('levelFeature')
-        if level == '' or level is None or int(level) > 2 or int(level) < 0:
+        if level not in LEVELS:
             return HttpResponseBadRequest()
         # build dictionary to serialize to json
         funcs = {
@@ -42,8 +44,7 @@ def result_json(request):
         }
     elif 'levelConforms' in request.GET:
         levelConforms = request.GET.get('levelConforms')
-        if levelConforms == '' or levelConforms is None or int(levelConforms) > 2 or \
-                int(levelConforms) < 0:
+        if levelConforms not in LEVELS:
             return HttpResponseBadRequest()
         funcs = {
             '0': valid_edtf.conformsLevel0(date),
