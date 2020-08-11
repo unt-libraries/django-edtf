@@ -7,6 +7,8 @@ x.x.x
 
 * Update requirements.txt to get latest version of edtf-validate
 * Updated project to python 3.7 
+* Added LevelConforms feature introduced in edtf-validate.
+* Renamed 'level' feature to 'levelFeature'.
 
 2.0.0
 -----
