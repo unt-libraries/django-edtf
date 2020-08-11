@@ -43,11 +43,15 @@ foo({
     "validEDTF": true,
 })
 
-$ curl http://{{ request.get_host }}/edtf/isValid.json?date=1985-01-13&level=0
+$ curl http://{{ request.get_host }}/edtf/isValid.json?date=1985-01-13&levelFeature=0
 {
     "validEDTF": true,
 }
 
+$ curl http://{{ request.get_host }}/edtf/isValid.json?date=1985-01-13&levelConforms=1
+{
+    "validEDTF": true,
+}
     </pre>
 </div>
 
@@ -70,7 +74,8 @@ $ curl http://{{ request.get_host }}/edtf/isValid.json?date=1985-01-13&level=0
 <h4>Parameters</h4>
 <b>date</b>: <i>Required</i> - the text respresentation of the date you want to verify.<br>
 <b>callback</b>: <i>Optional</i> - the text represenation of the jsonp callback wrapper.<br>
-<b>level</b>: <i>Optional</i> - the level at which you would like the given date verified against. If none is given, the service assumes you are verifying against the full EDTF spec.
+<b>levelFeature</b>: <i>Optional</i> - the level at which you would like the given date should be a feature of. If none is given, the service assumes you are verifying against the full EDTF spec.<br>
+<b>levelConforms</b>: <i>Optional</i> - the level at which you would like the given date validated against. If none is given, the service assumes you are verifying against the full EDTF spec.
 <h4>Return Value</h4>
 On success, a <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_Success">200 OK</a> response will be returned containing a JSON object that looks like this:
 <div class="highlight-python">
