@@ -21,7 +21,7 @@
 {% endif %}
 
 <!-- simple introduction of EDTF -->
-To determine whether a date conforms to the <a href="http://www.loc.gov/standards/datetime/pre-submission.html#level0">Extended Date Time Format Level 0-2</a>, enter it into the field below and click "Submit". A level 0 EDTF string can be comprised of 1 of 3 features (Date, Date Time, or Interval). A level 1 EDTF string consists of the same features, but may incorportate uncertainty, approximations, and unspecified dates. Level 1 may also feature years with more than 4 digits, and/or seasons. Additionally, level 2 includes partial uncertain/approximate and partial unspecified dates. Level 2 also features multiple dates as lists, masked precision, extended intervals, exponential and scientific notation for 'big' years. The result of this form will be either 'Valid EDTF date' or 'Invalid EDTF date'.<br>
+To determine whether a date conforms to the <a href="https://www.loc.gov/standards/datetime/">Extended Date Time Format Level 0-2</a>, enter it into the field below and click "Submit". A level 0 EDTF string can be comprised of 1 of 3 features (Date, Date Time, or Interval). A level 1 EDTF string consists of the same features, but may incorportate uncertainty, approximations, and unspecified dates. Level 1 may also feature years with more than 4 digits, and/or seasons. Additionally, level 2 includes partial uncertain/approximate and partial unspecified dates. Level 2 also features multiple dates as lists, masked precision, extended intervals, exponential and scientific notation for 'big' years. The result of this form will be either 'Valid EDTF date' or 'Invalid EDTF date'.<br>
 
 <p align=left>Here are some examples using <a class="reference external" href="http://www.cs.sunysb.edu/documentation/curl/index.html">curl</a>:</p>
 
@@ -38,7 +38,7 @@ $ curl http://{{ request.get_host }}/edtf/isValid.json?date=2012Jan
     "validEDTF": false,
 }
 
-$ curl "http://{{ request.get_host }}/edtf/isValid.json?date=1234&callback=foo"
+$ curl http://{{ request.get_host }}/edtf/isValid.json?date=1234&callback=foo
 foo({
     "validEDTF": true,
 })
@@ -74,8 +74,9 @@ $ curl http://{{ request.get_host }}/edtf/isValid.json?date=1985-01-13&levelConf
 <h4>Parameters</h4>
 <b>date</b>: <i>Required</i> - the text respresentation of the date you want to verify.<br>
 <b>callback</b>: <i>Optional</i> - the text represenation of the jsonp callback wrapper.<br>
-<b>levelFeature</b>: <i>Optional</i> - the level at which you would like the given date should be a feature of. If none is given, the service assumes you are verifying against the full EDTF spec.<br>
-<b>levelConforms</b>: <i>Optional</i> - the level at which you would like the given date validated against. If none is given, the service assumes you are verifying against the full EDTF spec.
+<b>levelFeature</b>: <i>Optional</i> - the level at which you would like the given date checked for being a feature of.<br>
+<b>levelConforms</b>: <i>Optional</i> - the level at which you would like the given date validated against.<br><br>
+Note: The optional parameters `levelFeature` and `levelConforms` are mutually exclusive, and if neither of them is given, the date will be validated against the full EDTF specification.
 <h4>Return Value</h4>
 On success, a <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_Success">200 OK</a> response will be returned containing a JSON object that looks like this:
 <div class="highlight-python">

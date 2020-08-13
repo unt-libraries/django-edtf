@@ -7,7 +7,7 @@ About
 -----
 
 Django-edtf is an app which provides the service of validating dates that comply with the
-Extended Date Time Format ([Levels 0-2](http://www.loc.gov/standards/datetime)).
+Extended Date Time Format ([Levels 0-2](https://www.loc.gov/standards/datetime/)).
 The simple interface may be used from the browser or from the command-line, using a utility
 such as `curl`. You can check if the date value is a feature of a level using `levelFeature` optional parameter and
 check if the date conforms at the given level using `levelConforms` optional parameter.
