@@ -19,8 +19,8 @@ entered or an invalid level value) you may receive an HTTP 400 to indicate that 
 Requirements
 ------------
 
-* Django 1.11
-* Python == 2.7, 3.6, 3.7, 3.8
+* Django 2.2
+* Python == 3.6, 3.7, 3.8
 * [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.1.0
 
 
@@ -45,7 +45,7 @@ Installation
 
     ```python
     urlpatterns = [
-        url(r'^edtf/', include('edtf.urls', namespace='edtf')),
+        path('edtf/', include('edtf.urls', namespace='edtf')),
     ]
     ```
 

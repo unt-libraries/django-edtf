@@ -1,2 +1,2 @@
-django~=1.11.29
+django~=2.2.17
 git+https://github.com/unt-libraries/edtf-validate.git@master#egg=edtf-validate
