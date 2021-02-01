@@ -1,5 +1,5 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 
 urlpatterns = [
-    url(r'^edtf/', include('edtf.urls', namespace='edtf'))
+    path('edtf/', include('edtf.urls', namespace='edtf'))
 ]

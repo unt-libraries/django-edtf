@@ -2,9 +2,12 @@ Change Log
 ==========
 
 
-x.x.x
+3.0.0
 -----
 
+* Upgraded to Django 2.2.
+* Dropped support for Django 1.11 and versions below.
+* Dropped support for Python 2.7.
 * Updated requirements.txt to get latest version of edtf-validate.
 * Updated project to python 3.7.
 * Added `levelConforms` query parameter to check `conformsLevel*` functionality now present in edtf-validate.

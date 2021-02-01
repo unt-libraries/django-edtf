@@ -101,7 +101,6 @@ class TestResultJsonView:
                                  ('2004-06-11%/2004-06~', '2', False),
                                  ('15XX-12-25', '1', False),
                                  ('1863- 03-29', '1', False),
-                                 (None, '0', False),
                                  ('Y170000002', '0', False),
                              ])
     def test_date_and_levelConforms(self, input_date, levelConforms, edtf_output, client):
@@ -122,7 +121,6 @@ class TestResultJsonView:
                                  ('15XX-12-25', '1', False),
                                  ('0000/0000', 1, False),
                                  ('1863- 03-29', '0', False),
-                                 (None, '0', False),
                                  ('Y170000002', '0', False),
                              ])
     def test_date_and_levelFeature(self, input_date, levelFeature, edtf_output, client):
