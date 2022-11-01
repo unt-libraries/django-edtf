@@ -1,6 +1,6 @@
 Django-edtf
 ===========
-[![Build Status](https://travis-ci.org/unt-libraries/django-edtf.svg?branch=master)](https://travis-ci.org/unt-libraries/django-edtf)
+[![Build Status](https://github.com/unt-libraries/django-edtf/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/unt-libraries/django-edtf/actions)
 
 
 About
@@ -20,7 +20,7 @@ Requirements
 ------------
 
 * Django 2.2
-* Python == 3.6, 3.7, 3.8
+* Python == 3.6, 3.7, 3.8, 3.9
 * [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.1.0
 
 
