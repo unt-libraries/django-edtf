@@ -20,7 +20,7 @@ Requirements
 ------------
 
 * Django 2.2
-* Python == 3.6, 3.7, 3.8, 3.9
+* Python 3.6-3.9
 * [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.1.0
 
 
@@ -70,3 +70,4 @@ Contributors
 * [Damon Kelley](https://github.com/damonkelley)
 * [Gio Gottardi](https://github.com/somexpert)
 * [Madhulika Bayyavarapu](https://github.com/madhulika95b)
+* [Gracie Flores-Hays](https://github.com/gracieflores)
