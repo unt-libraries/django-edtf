@@ -12,6 +12,8 @@ Change Log
 * Updated project to python 3.7.
 * Added `levelConforms` query parameter to check `conformsLevel*` functionality now present in edtf-validate.
 * Renamed `level` feature to `levelFeature`.
+* Replaced Travis with GitHub Actions.
+* Added support for Python 3.9.
 
 2.0.0
 -----
