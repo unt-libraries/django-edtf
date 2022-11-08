@@ -2,6 +2,15 @@ Change Log
 ==========
 
 
+3.1.0
+-----
+
+* Upgraded to Django 4.1.
+* Dropped support for Django 2.2.
+* Dropped support for Python 3.6-3.7.
+* Added support for Python 3.10.
+
+
 3.0.0
 -----
 
@@ -14,6 +23,7 @@ Change Log
 * Renamed `level` feature to `levelFeature`.
 * Replaced Travis with GitHub Actions.
 * Added support for Python 3.9.
+
 
 2.0.0
 -----
