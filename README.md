@@ -19,7 +19,7 @@ entered or an invalid level value) you may receive an HTTP 400 to indicate that 
 Requirements
 ------------
 
-* Django 4.1
+* Django 4.2
 * Python 3.8-3.10
 * [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.1.0
 
