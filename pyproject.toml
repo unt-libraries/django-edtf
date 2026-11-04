@@ -25,7 +25,7 @@ classifiers = [
 ]
 dependencies = [
     "Django~=6.1.0",
-    "edtf-validate @ git+https://github.com/unt-libraries/edtf-validate.git@upgrade-python"
+    "edtf-validate @ git+https://github.com/unt-libraries/edtf-validate.git@master"
 ]
 
 [project.urls]
