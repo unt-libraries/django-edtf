@@ -19,9 +19,9 @@ entered or an invalid level value) you may receive an HTTP 400 to indicate that 
 Requirements
 ------------
 
-* Django 4.2
-* Python 3.8-3.10
-* [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.1.0
+* Django 6.1
+* Python 3.12 - 3.14
+* [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 4.0.0
 
 
 Installation
@@ -71,3 +71,4 @@ Contributors
 * [Gio Gottardi](https://github.com/somexpert)
 * [Madhulika Bayyavarapu](https://github.com/madhulika95b)
 * [Gracie Flores-Hays](https://github.com/gracieflores)
+* [Trey Clark](https://github.com/clarktr1)
