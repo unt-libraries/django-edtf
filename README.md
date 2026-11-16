@@ -55,6 +55,37 @@ Installation
     MAINTENANCE_MSG = ''
     ```
 
+Development
+-----------
+
+After completeing the Installation steps, follow these to set up the development environment.
+
+1. Install the dependencies. It is recommended to use a virtual environment for handling packages.
+
+    ```console
+    pip install .'[test]'
+    ```
+
+2. Add migrations.
+
+    ```console
+    python manage.py migrate
+    ```
+
+3. Create a superuser.
+
+    ```console
+    python manage.py createsuperuser
+    ```
+
+4. Start the app on the local server.
+
+    ```console
+    python manage.py runserver
+    ```
+
+You can visit the application at `http://127.0.0.1:8000/edtf/`.
+
 License
 -------
 
