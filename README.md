@@ -19,9 +19,9 @@ entered or an invalid level value) you may receive an HTTP 400 to indicate that 
 Requirements
 ------------
 
-* Django 4.2
-* Python 3.8-3.10
-* [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 1.1.0
+* Django 6.1
+* Python 3.12 - 3.14
+* [edtf-validate](https://github.com/unt-libraries/edtf-validate) >= 4.0.0
 
 
 Installation
@@ -55,6 +55,37 @@ Installation
     MAINTENANCE_MSG = ''
     ```
 
+Development
+-----------
+
+After completeing the Installation steps, follow these to set up the development environment.
+
+1. Install the dependencies. It is recommended to use a virtual environment for handling packages.
+
+    ```console
+    pip install .'[test]'
+    ```
+
+2. Add migrations.
+
+    ```console
+    python manage.py migrate
+    ```
+
+3. Create a superuser.
+
+    ```console
+    python manage.py createsuperuser
+    ```
+
+4. Start the app on the local server.
+
+    ```console
+    python manage.py runserver
+    ```
+
+You can visit the application at `http://127.0.0.1:8000/edtf/`.
+
 License
 -------
 
@@ -71,3 +102,4 @@ Contributors
 * [Gio Gottardi](https://github.com/somexpert)
 * [Madhulika Bayyavarapu](https://github.com/madhulika95b)
 * [Gracie Flores-Hays](https://github.com/gracieflores)
+* [Trey Clark](https://github.com/clarktr1)
